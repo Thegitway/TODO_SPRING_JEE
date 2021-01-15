@@ -5,8 +5,8 @@ import com.emsi.todo.repository.UserRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
+@CrossOrigin
 @RestController
 public class UserController {
     private final UserRepository repository;
@@ -52,7 +52,7 @@ public class UserController {
     }
 
     @PostMapping("/user/{uid}")
-    User updateUser(@PathVariable("id") Integer uid,@RequestBody User user)
+    User updateUser(@PathVariable Integer uid,@RequestBody User user)
     {
         User u=repository.findById(uid).orElse(null);
         if(u!=null)
@@ -68,10 +68,18 @@ public class UserController {
         return null;
     }
 
-    @DeleteMapping("/user/{uid}")
-    void deleteUser()
-    {
+  @DeleteMapping("/user/{uid}")
+  void deleteUserByID(@PathVariable Integer uid) {
+    repository.deleteById(uid);
+  }
 
+  @PostMapping("/login")
+  User login(@RequestBody User user) throws Exception {
+    if (user.getAdresseEmail() != null && user.getMotDePasse() != null) {
+      return repository.findByAdresseEmailAndMotDePasse(user.getAdresseEmail(), user.getMotDePasse()).orElseThrow();
     }
+
+    throw new Exception();
+  }
 
 }
