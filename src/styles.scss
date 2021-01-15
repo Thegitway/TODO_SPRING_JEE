@@ -1,0 +1,20 @@
+@use '@material/theme' with (
+  $primary: #6200ee,
+  $secondary: #faab1a,
+  $background: #fff,
+);
+
+@use '@material/typography/mdc-typography';
+@use '@angular-mdc/theme/material';
+
+@use '@material/button/mdc-button';
+@use '@material/button';
+@use '@material/textfield/mdc-text-field';
+@use '@material/textfield';
+@use '@material/form-field';
+@use '@material/snackbar/mdc-snackbar';
+@use '@material/snackbar';
+@use '@material/drawer/mdc-drawer';
+@use '@material/drawer';
+@use '@material/list/mdc-list';
+@use '@material/list';

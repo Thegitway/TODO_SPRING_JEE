@@ -1,0 +1,12 @@
+<form [formGroup]="listeForm" (ngSubmit)="creerListe()">
+    <mdc-form-field>
+        <mdc-text-field outlined label="Nom de liste" formControlName="nom"></mdc-text-field>
+    </mdc-form-field>
+    <mdc-form-field>
+        <mdc-text-field outlined label="Arriere plan" formControlName="arrierePlan"></mdc-text-field>
+    </mdc-form-field>
+    <mdc-form-field>
+        <mdc-text-field outlined label="Icone" formControlName="icone"></mdc-text-field>
+    </mdc-form-field>
+    <button mdc-button raised>Creer</button>
+</form>

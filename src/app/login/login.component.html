@@ -1,0 +1,9 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <mdc-form-field>
+        <mdc-text-field formControlName="adresseMail" label="Adresse e-mail" outlined></mdc-text-field>
+    </mdc-form-field>
+    <mdc-form-field>
+        <mdc-text-field formControlName="motDePasse" label="Mot de passe" type="password" outlined></mdc-text-field>
+    </mdc-form-field>
+    <button mdc-button raised>Se connecter</button>
+</form>

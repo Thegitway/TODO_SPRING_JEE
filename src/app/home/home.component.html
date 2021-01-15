@@ -1,0 +1,14 @@
+<mdc-drawer>
+    <mdc-drawer-header [title]="userInfos.nomComplet" [subtitle]="userInfos.adresseMail"></mdc-drawer-header>
+    <mdc-drawer-content>
+        <mdc-list>
+            <a mdc-list-item [routerLink]="['/creer_liste']">Nouvelle liste</a>
+            <mdc-list-divider></mdc-list-divider>
+            <div *ngIf="listes != null">
+                <a mdc-list-item *ngFor="let liste of listes" [routerLink]="['/taches', liste.listeID]">{{liste.nom}}</a>
+            </div>
+        </mdc-list>
+    </mdc-drawer-content>
+</mdc-drawer>
+
+<router-outlet></router-outlet>

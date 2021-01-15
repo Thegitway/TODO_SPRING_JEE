@@ -1,0 +1,9 @@
+<form [formGroup]="tacheForm" (ngSubmit)="creerTache()">
+    <mdc-form-field>
+        <mdc-textarea outlined rows="4" label="Description" formControlName="description"></mdc-textarea>
+    </mdc-form-field>
+    <mdc-form-field>
+        <mdc-text-field outlined type="date" label="Date rappel" formControlName="dateRappel"></mdc-text-field>
+    </mdc-form-field>
+    <button mdc-button raised>Creer</button>
+</form>
